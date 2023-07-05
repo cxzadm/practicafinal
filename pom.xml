@@ -62,13 +62,13 @@
 
     <build>
         <plugins>
-            <!-- ... plugins existentes ... -->
+            <!-- ... otros plugins existentes ... -->
 
-            <!-- Actualización de la versión de OWASP Dependency-Check -->
+            <!-- Plugin de dependency-check -->
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>6.4.1</version> <!-- Actualiza la versión a la más reciente -->
+                <version>6.4.1</version>
                 <executions>
                     <execution>
                         <goals>
