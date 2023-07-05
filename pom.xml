@@ -28,6 +28,11 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.6.14</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -69,7 +74,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>6.1.1</version>
+                <version>8.0.2</version>
                 <executions>
                     <execution>
                         <goals>
@@ -106,6 +111,8 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- static source code analysis -->
+            <!-- checkstyle checks style. not security related coding errors, etc
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -133,6 +140,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            -->
             <!-- static source code analysis -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
@@ -191,9 +199,9 @@
                 <version>1.2.1-0</version>
                 <configuration>
                     <!-- If ZAP is running on localhost, there is no need to define zapHost -->
-                    <zapHost>zap</zapHost>
                     <zapPort>8080</zapPort>
                     <targetUrl>http://myapp:8080/rest</targetUrl>
+                    <shouldStartNewSession>false</shouldStartNewSession>
                 </configuration>
             </plugin>
             <plugin>
@@ -244,6 +252,8 @@
                 <artifactId>maven-jxr-plugin</artifactId>
                 <version>3.0.0</version>
             </plugin>
+            <!-- Checkstyle report -->
+            <!-- Checkstyle checks 'style', not security, resource usage, performance
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -256,6 +266,7 @@
                     </reportSet>
                 </reportSets>
             </plugin>
+            -->
             <!-- PMD report -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -282,6 +293,7 @@
                     </plugins>
                 </configuration>
             </plugin>
+            <!-- not security related
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
@@ -296,6 +308,8 @@
                     </reportSet>
                 </reportSets>
             </plugin>
+            -->
         </plugins>
     </reporting>
 </project>
+
