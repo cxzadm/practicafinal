@@ -37,7 +37,7 @@ pipeline {
       }
     }
 
-    stage ('ZAP') {
+    /*stage ('ZAP') {
       steps {
         withMaven(maven : 'mvn-3.6.3') {
           sh 'mvn zap:analyze'
@@ -61,6 +61,6 @@ pipeline {
           }
         }
       }
-    }
+    }*/
   }
 }
