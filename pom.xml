@@ -192,9 +192,9 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>      
             <plugin>
-                <groupId>br.com.softplan.security</groupId>
+                <groupId>br.com.softplan.security.zap</groupId>
                 <artifactId>zap-maven-plugin</artifactId>
                 <version>1.2.1-0</version>
                 <configuration>
