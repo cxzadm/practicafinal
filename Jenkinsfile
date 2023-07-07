@@ -53,7 +53,7 @@ pipeline {
       }
     }
 
-    /*stage('SonarQube analysis') {
+    stage('SonarQube analysis') {
       steps {
         withSonarQubeEnv(credentialsId: 'sonarqube-secret', installationName: 'sonarqube-server') {
           withMaven(maven : 'mvn-3.6.3') {
@@ -61,6 +61,6 @@ pipeline {
           }
         }
       }
-    }*/
+    }
   }
 }
