@@ -192,22 +192,16 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>      
+            </plugin>       
             <plugin>
                 <groupId>br.com.softplan.security.zap</groupId>
                 <artifactId>zap-maven-plugin</artifactId>
                 <version>1.2.1-0</version>
                 <configuration>
+                    <!-- If ZAP is running on localhost, there is no need to define zapHost -->
                     <zapHost>zap</zapHost>
                     <zapPort>8080</zapPort>
-                    <targetUrl>http://localhost:8080/rest</targetUrl>
-                    <shouldStartNewSession>false</shouldStartNewSession>
-                    <!-- If ZAP is running on localhost, there is no need to define zapHost 
-                    <zapHost>localhost</zapHost>
-                    <zapPort>8080</zapPort>
-                    <targetUrl>http://localhost/rest/demo</targetUrl>
-                    <zapPath>/zap</zapPath>
-                    <shouldStartNewSession>false</shouldStartNewSession> -->
+                    <targetUrl>http://myapp:8080/rest</targetUrl>
                 </configuration>
             </plugin>
             <plugin>
