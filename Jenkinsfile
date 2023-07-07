@@ -37,7 +37,7 @@ pipeline {
       }
     }
 
-    /*stage ('ZAP') {
+    stage ('ZAP') {
       steps {
         withMaven(maven : 'mvn-3.6.3') {
           sh 'mvn zap:analyze'
@@ -53,7 +53,7 @@ pipeline {
       }
     }
 
-    stage('SonarQube analysis') {
+    /*stage('SonarQube analysis') {
       steps {
         withSonarQubeEnv(credentialsId: 'sonarqube-secret', installationName: 'sonarqube-server') {
           withMaven(maven : 'mvn-3.6.3') {
