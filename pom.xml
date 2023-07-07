@@ -200,7 +200,7 @@
                 <configuration>
                     <!-- If ZAP is running on localhost, there is no need to define zapHost -->
                     <zapHost>localhost</zapHost>
-                    <zapPort>8080</zapPort>
+                    <zapPort>8090</zapPort>
                     <targetUrl>http://localhost/rest/demo</targetUrl>
                     <zapPath>C:\Program Files\OWASP\Zed Attack Proxy</zapPath>
                     <shouldStartNewSession>true</shouldStartNewSession>
