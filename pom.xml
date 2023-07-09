@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <sonar.projectKey>tu-clave-de-proyecto-sonarqube</sonar.projectKey>
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
     </properties>
 
     <dependencies>
@@ -216,13 +216,12 @@
                 <version>3.1.1</version>
             </plugin>
             <plugin>
-            <groupId>org.sonarsource.scanner.maven</groupId>
-            <artifactId>sonar-maven-plugin</artifactId>
-            <version>3.8.0.2131</version>
-            <configuration>
-                <sonar.login>${env.SONAR_LOGIN}</sonar.login>
-                <sonar.password>${env.SONAR_PASSWORD}</sonar.password>
-            </configuration>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.8.0.2131</version>
+                <configuration>
+                    <sonar.host.url>${sonar.host.url}</sonar.host.url>
+                </configuration>
             </plugin>
             <!-- <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
