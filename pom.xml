@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>11</java.version>
+        <sonar.projectKey>tu-clave-de-proyecto-sonarqube</sonar.projectKey>
     </properties>
 
     <dependencies>
@@ -215,11 +216,21 @@
                 <version>3.1.1</version>
             </plugin>
             <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.8.0.2131</version>
+            <configuration>
+                <sonar.login>${env.SONAR_LOGIN}</sonar.login>
+                <sonar.password>${env.SONAR_PASSWORD}</sonar.password>
+            </configuration>
+            
+            <!-- </plugin>
+            <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.8.0.2131</version>
             </plugin>
-            <!-- make container image -->
+             make container image -->
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
