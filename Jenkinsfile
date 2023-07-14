@@ -52,6 +52,7 @@ pipeline {
         }
       }
     }
+    
     stage('SonarQube analysis') {
           steps {
             withSonarQubeEnv(credentialsId: 'sonarqube-secret', installationName: 'sonarqube-server') {
