@@ -52,35 +52,16 @@ pipeline {
         }
       }
     }
-    /*
     stage('SonarQube analysis') {
-      steps {
-        withSonarQubeEnv(credentialsId: 'sonarqube-secret', installationName: 'sonarqube-server') {
-          script {
-            def mvnHome = tool 'mvn-3.6.3'
-            def sonarScannerHome = tool 'sonarqube-scanner'
-
-            withEnv([
-              "PATH+MAVEN=${mvnHome}/bin",
-              "PATH+SONAR_RUNNER=${sonarScannerHome}/bin",
-              "SONAR_SCANNER_OPTS=-Dsonar.host.url=http://localhost:8080"
-            ]) {
-              sh 'mvn sonar:sonar -Dsonar.dependencyCheck.jsonReportPath=target/dependency-check-report.json -Dsonar.dependencyCheck.xmlReportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html -Dsonar.java.pmd.reportPaths=target/pmd.xml -Dsonar.java.spotbugs.reportPaths=target/spotbugsXml.xml -Dsonar.zaproxy.reportPath=target/zap-reports/zapReport.xml -Dsonar.zaproxy.htmlReportPath=target/zap-reports/zapReport.html'
-            }
-          }
-        }
-      }
-    }
-
-    /*
-        stage('SonarQube analysis') {
           steps {
             withSonarQubeEnv(credentialsId: 'sonarqube-secret', installationName: 'sonarqube-server') {
               withMaven(maven : 'mvn-3.6.3') {
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.4",
                 sh 'mvn sonar:sonar -Dsonar.dependencyCheck.jsonReportPath=target/dependency-check-report.json -Dsonar.dependencyCheck.xmlReportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html -Dsonar.java.pmd.reportPaths=target/pmd.xml -Dsonar.java.spotbugs.reportPaths=target/spotbugsXml.xml -Dsonar.zaproxy.reportPath=target/zap-reports/zapReport.xml -Dsonar.zaproxy.htmlReportPath=target/zap-reports/zapReport.html'
               }
             }
           }
-        }**/
+        }
   } 
 }
